@@ -33,4 +33,7 @@
         msg: "{{ URL_CUSTOM }}" 
 
 
+# ansible-playbook -e "URL_CUSTOM='my url is this domain'" vars.yml        
+
+
 
