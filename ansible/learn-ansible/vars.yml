@@ -32,6 +32,14 @@
       ansible.builtin.debug:
         msg: "{{ URL_CUSTOM }}" 
 
+    - name: demo
+      ansible.builtin.shell: uptime
+      register: OUTPUT 
+      
+    - name: Print OUTPUT of previous task
+      ansible.builtin.debug:
+        msg: "{{ OUTPUT.stdout }}"       
+
 
 # ansible-playbook -e "URL_CUSTOM='my url is this domain'" vars.yml        
 
