@@ -37,10 +37,17 @@ output "z_x" {
 
 variable "env" {}
 
+variable "Name" {}
+
 
 output "env" {
     value = var.env
 }
+
+output "Name" {
+    value = var.Name
+}
+
 
 
 
