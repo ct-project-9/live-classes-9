@@ -48,11 +48,23 @@ CMD keyword is used to run commands on the start of the
 container. These commands run only when there is no argument
 specified while running the container. (app.jar  --> java app.jar // python3 app.py)
 
+FROM ubuntu
+CMD ["echo" , "Hello World!"]
+
+docker run imagename echo "Hello World during docker run from CMD image"
+
 
 ENTRYPOINT
 The
 ENTRYPOINT keyword is used strictly to run commands the
 moment the container initializes along with multiple arguments -- java app.jar --xms 20Gb
+
+FROM ubuntu
+ENTRYPOINT ["echo" , "Hello from ENTRYPOINT:"]
+
+docker build -f entry.Dockerfile --tag e:v1 .
+
+docker run e:v1 "Hello World during docker run from ENTRY imagerun"
 
 
 ================================================
