@@ -35,7 +35,7 @@ Modern application deployments often involve containerizing both the backend and
 
 1. Run the Docker container:
    ```sh
-   docker run -p 5000:5000 my-flask-app
+   docker run -it -d -p 5000:5000 --name my-flask-app1 pyapp:v1 (your build image name)
    ```
 
 2. Access the Flask application in your web browser at `http://localhost:5000`.
