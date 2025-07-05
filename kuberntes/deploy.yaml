@@ -4,7 +4,7 @@ metadata:
   name: nginx-deployment
   labels:
     app: nginx
-  namespace: app-1  
+  namespace: app-1
 spec:
   replicas: 3
   selector:
@@ -22,21 +22,20 @@ spec:
             - containerPort: 80
           resources:
             requests:
-              memory: "0.5GB"
-              cpu: "0.25"
+              memory: "512Mi"
+              cpu: "250m"
             limits:
-              memory: "0.5GB"
-              cpu: "0.25"    
+              memory: "512Mi"
+              cpu: "250m"
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
   name: my-nginx-service
   labels:
     app: nginx
-  namespace: app-1 
+  namespace: app-1
 spec:
   selector:
     app: nginx
@@ -44,6 +43,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      # nodePort: 30007
-  type: LoadBalancer    
-
+  type: LoadBalancer
